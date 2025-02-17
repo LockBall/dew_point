@@ -23,10 +23,10 @@ T  °F   - 49 → 140
 
 <br>
 
-Consider a simplified form of the August-Roche-Magnus equation:
+Consider a simplified form of the August-Roche-Magnus equation:  
 $$T_d = \frac{B \cdot \alpha(T, RH)}{A - \alpha(T, RH)}$$
 
-where
+where  
 $$\alpha = \frac{A \cdot T}{B + T} + \ln\left(\frac{RH}{100}\right) $$
 <pre>
 A    [17.27 →  17.625] = 17.625    dimensionless
