@@ -1,9 +1,15 @@
 # dew_point
-Calculate and visualize dew point ([1](#1))  and dew point margin across a wide range of relative humidity and temperature (RH &amp; T) with a consideration for preventing high humidity and surface condensation in small rooms, e.g. 3 m<sup>3</sup>. 
 
-calculate dew point from relative humidity and temperature using the magnus formula
+### Goal
+Calculate and visualize dew point termperature (T<sub>d</sub>) ([1](#1))  and dew point margin across a wide range of relative humidity and temperature (RH &amp; T) values with a consideration for preventing high humidity and surface condensation in small rooms, e.g. 3 m<sup>3</sup>. 
+#
 
-if RH > 50 % then the dew point temperature (T<sub>d</sub>) in °C can be caluclated fairly accurately using ([2](#2))
+#### LLM Prompt
+Calculate dew point from relative humidity and temperature using the magnus formula.
+#
+
+#### Explanation & Equation Selection
+If RH > 50 % then the dew point temperature (T<sub>d</sub>) in °C can be caluclated fairly accurately using ([2](#2))
 
 T<sub>d</sub> = T - ((100 - RH) / 5)  
 
@@ -17,9 +23,15 @@ T  °F   - 49 → 140
 
 <br>
 
-Consider a simplified form of the August-Roche-Magnus equation
+Consider a simplified form of the August-Roche-Magnus equation:
+$$T_d = \frac{B \cdot \alpha(T, RH)}{A - \alpha(T, RH)}$$
 
-T<sub>d</sub> = (b × α(T,RH)) / (a - α(T,RH))
+where
+$$\alpha = \frac{A \cdot T}{B + T} + \ln\left(\frac{RH}{100}\right) $$
+<pre>
+A    [17.27 →  17.625] = 17.625    dimensionless
+B    [237.04 → 243.12] = 243.04    °C
+</pre>
 
 https://www.omnicalculator.com/physics/dew-point  
 
@@ -31,21 +43,9 @@ https://journals.ametsoc.org/downloadpdf/view/journals/bams/86/2/bams-86-2-225.p
 Adjusting the coefficients can reduce uncertainty for specific, narrower temperature ranges.
 The coefficients should also be changed depending on whether the air mass is over water or ice.
 
-August-Roche-Magnus equation coefficients range  
 
-<pre>
-a =  17.27 →  17.625  
-b = 237.04 → 243.12
-</pre>
 
-α = (a • t) / (b + t) + ln(RH / 100)
-
-\[
-\alpha = \frac{A \cdot T}{B + T} + \ln\left(\frac{RH}{100}\right)
-\]
-
-coef_a = 17.625  dimensionless  
-coef_b = 243.04  °C  
+ 
 
 <br>
 
