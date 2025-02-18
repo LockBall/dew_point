@@ -28,9 +28,10 @@ $$T_d = \frac{B \cdot \alpha(T, RH)}{A - \alpha(T, RH)}$$
 
 where  
 $$\alpha = \frac{A \cdot T}{B + T} + \ln\left(\frac{RH}{100}\right) $$
+and the coefficients A and B are  
 <pre>
-A    [17.27 →  17.625] = 17.625    dimensionless
-B    [237.04 → 243.12] = 243.04    °C
+ 17.27 < A <  17.625  =  17.625    dimensionless
+237.04 < B < 243.12   =  243.04    °C
 </pre>
 
 https://www.omnicalculator.com/physics/dew-point  
@@ -41,11 +42,7 @@ https://journals.ametsoc.org/downloadpdf/view/journals/bams/86/2/bams-86-2-225.p
 "For the range -45 °C to +60 °C, values given by this equation have an uncertainty of < ±0.6 % of value, at the 95% confidence level." https://www.npl.co.uk/resources/q-a/dew-point-and-relative-humidity  
 
 Adjusting the coefficients can reduce uncertainty for specific, narrower temperature ranges.
-The coefficients should also be changed depending on whether the air mass is over water or ice.
 
-
-
- 
 
 <br>
 
